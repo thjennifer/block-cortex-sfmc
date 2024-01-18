@@ -10,7 +10,6 @@ datagroup: sfmc_report_default_datagroup {
 }
 
 persist_with: sfmc_report_default_datagroup
-explore: job_agg {}
 
 
 named_value_format: positive_m_or_k {
