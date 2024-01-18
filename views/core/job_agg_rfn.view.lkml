@@ -1,0 +1,104 @@
+include: "/views/base/job_agg.view"
+
+view: +job_agg {
+
+
+  dimension: job_id_pk {
+    type: string
+    primary_key: yes
+    hidden: yes
+    sql: ${TABLE}.JobID ;;
+  }
+  dimension: email_broadcast {
+    type: string
+    sql: concat(${email_name}," ",${job_id}) ;;
+
+  }
+
+  measure: sum_of_delivered_email {
+    type: sum
+    value_format_name: "positive_m_or_k"
+    description: "Total emails delivered"
+    sql: ${total_delivered} ;;
+  }
+
+  measure: sum_of_bounced_email {
+    type: sum
+    value_format_name: "positive_m_or_k"
+    description: "Total count of Emails BOUNCED per job id "
+    sql: ${total_bounce} ;;
+  }
+  measure: sum_of_email_click {
+    type: sum
+    value_format_name: "positive_m_or_k"
+    description: "The total number of emails click as per job id by recipient."
+    sql: ${total_click} ;;
+  }
+  measure: sum_of_open_email {
+    type: sum
+    value_format_name: "positive_m_or_k"
+    description: "Total count of Emails OPEN per job id."
+    sql: ${total_open} ;;
+  }
+  measure: sum_of_sent_email {
+    type: sum
+    value_format_name: "positive_m_or_k"
+    description: "Total count of Emails OPEN per job id."
+    sql: ${total_sent} ;;
+  }
+  measure: sum_of_unique_click {
+    type: sum
+    value_format_name: "positive_m_or_k"
+    description: "Total Unique click as per job id."
+    sql: ${total_unique_click} ;;
+  }
+  measure: sum_of_unique_open {
+    type: sum
+    value_format_name: "positive_m_or_k"
+    description: "Total count of unique Emails OPEN per job id."
+    sql: ${total_unique_open} ;;
+  }
+  measure: sum_of_unsubscribe {
+    type: sum
+    value_format_name: "positive_m_or_k"
+    description: "Total emails unsubscribed."
+    sql: ${total_unsubscribe} ;;
+  }
+  measure: delivery_rate {
+    type: number
+    description: "The percentage of emails delivered within the filtered time period."
+    sql: ((${sum_of_sent_email}-${sum_of_bounced_email}) / ${sum_of_sent_email})*100 ;;
+    value_format:"0.00\%"
+  }
+
+  measure: ctr {
+    type: number
+    description: "The percentage of visitors who clicked a link contained in an email."
+    sql: ( ${sum_of_unique_click}/ (${sum_of_sent_email}-${sum_of_bounced_email}))*100 ;;
+    value_format:"0.00\%"
+  }
+
+  measure: bounce_rate {
+    type: number
+    description: "The percentage of bounce email."
+    sql: ( ${sum_of_bounced_email}/ ${sum_of_sent_email})*100 ;;
+    value_format:"0.00\%"
+
+  }
+
+  measure: unsubscribe_rate {
+    type: number
+    description: "The percentage of visitors who unsubscribed."
+    sql: ( ${sum_of_unsubscribe}/ ${sum_of_sent_email})*100 ;;
+    value_format:"0.00\%"
+  }
+
+  measure: open_rate {
+    type: number
+    description: "The percentage of emails opened within the filtered time period."
+    sql: ( ${sum_of_unique_open}/ (${sum_of_sent_email}-${sum_of_bounced_email}))*100 ;;
+    value_format:"0.00\%"
+
+  }
+
+}

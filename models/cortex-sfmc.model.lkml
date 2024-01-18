@@ -1,10 +1,8 @@
 connection: "@{CONNECTION_NAME}"
 
 # include explores and other objects
-
-include: "/explores/*.explore"
-# include all the views
 include: "/views/**/*.view.lkml"
+include: "/explores/**/*.explore"
 
 datagroup: sfmc_report_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
@@ -12,7 +10,6 @@ datagroup: sfmc_report_default_datagroup {
 }
 
 persist_with: sfmc_report_default_datagroup
-explore: job_agg {}
 
 
 named_value_format: positive_m_or_k {
