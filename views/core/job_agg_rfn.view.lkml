@@ -2,7 +2,6 @@ include: "/views/base/job_agg.view"
 
 view: +job_agg {
 
-
   dimension: job_id_pk {
     type: string
     primary_key: yes
