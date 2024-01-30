@@ -8,13 +8,22 @@ view: job_agg {
     type: number
     sql: ${TABLE}.JobID ;;
   }
+
   dimension_group: sched {
     type: time
-    timeframes: [raw, date, week, month, quarter, year]
-    convert_tz: no
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
     datatype: date
     sql: ${TABLE}.SchedDate ;;
   }
+
   dimension: total_bounce {
     type: number
     sql: ${TABLE}.TotalBounce ;;
@@ -26,14 +35,6 @@ view: job_agg {
   dimension: total_delivered {
     type: number
     sql: ${TABLE}.TotalDelivered ;;
-  }
-  dimension: total_engaged_subscribers {
-    type: number
-    sql: ${TABLE}.TotalEngagedSubscribers ;;
-  }
-  dimension: total_non_engaged_subscribers {
-    type: number
-    sql: ${TABLE}.TotalNonEngagedSubscribers ;;
   }
   dimension: total_open {
     type: number
