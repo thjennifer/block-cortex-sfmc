@@ -10,8 +10,7 @@ view: +job_agg {
   }
   dimension: email_broadcast {
     type: string
-    sql: concat(${email_name}," ",${job_id}) ;;
-
+    sql: CONCAT(${email_name} ," ", ${job_id}) ;;
   }
 
   measure: sum_of_delivered_email {
