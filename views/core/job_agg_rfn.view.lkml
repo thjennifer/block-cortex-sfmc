@@ -72,14 +72,14 @@ view: +job_agg {
   measure: ctr {
     type: number
     description: "The percentage of visitors who clicked a link contained in an email."
-    sql: ( ${sum_of_unique_click}/ (${sum_of_sent_email}-${sum_of_bounced_email}))*100 ;;
+    sql: (${sum_of_unique_click}/ (${sum_of_sent_email}-${sum_of_bounced_email}))*100 ;;
     value_format:"0.00\%"
   }
 
   measure: bounce_rate {
     type: number
     description: "The percentage of bounce email."
-    sql: ( ${sum_of_bounced_email}/ ${sum_of_sent_email})*100 ;;
+    sql: (${sum_of_bounced_email}/ ${sum_of_sent_email})*100 ;;
     value_format:"0.00\%"
 
   }
@@ -87,14 +87,14 @@ view: +job_agg {
   measure: unsubscribe_rate {
     type: number
     description: "The percentage of visitors who unsubscribed."
-    sql: ( ${sum_of_unsubscribe}/ ${sum_of_sent_email})*100 ;;
+    sql: (${sum_of_unsubscribe}/ ${sum_of_sent_email})*100 ;;
     value_format:"0.00\%"
   }
 
   measure: open_rate {
     type: number
     description: "The percentage of emails opened within the filtered time period."
-    sql: ( ${sum_of_unique_open}/ (${sum_of_sent_email}-${sum_of_bounced_email}))*100 ;;
+    sql: (${sum_of_unique_open}/ (${sum_of_sent_email}-${sum_of_bounced_email}))*100 ;;
     value_format:"0.00\%"
 
   }
