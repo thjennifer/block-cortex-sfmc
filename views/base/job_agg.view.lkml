@@ -1,5 +1,6 @@
 view: job_agg {
-  sql_table_name: `@{GCP_PROJECT_ID}.@{REPORTING_DATASET}.JobAgg` ;;
+  sql_table_name: `kittycorn-dev-epam.looker_reporting_sfmc.JobAgg` ;;
+
   dimension: email_name {
     type: string
     sql: ${TABLE}.EmailName ;;
@@ -26,14 +27,6 @@ view: job_agg {
   dimension: total_delivered {
     type: number
     sql: ${TABLE}.TotalDelivered ;;
-  }
-  dimension: total_engaged_subscribers {
-    type: number
-    sql: ${TABLE}.TotalEngagedSubscribers ;;
-  }
-  dimension: total_non_engaged_subscribers {
-    type: number
-    sql: ${TABLE}.TotalNonEngagedSubscribers ;;
   }
   dimension: total_open {
     type: number
