@@ -1,5 +1,6 @@
 view: job_agg {
-  sql_table_name: `@{GCP_PROJECT_ID}.@{REPORTING_DATASET}.JobAgg` ;;
+  sql_table_name: `kittycorn-dev-epam.looker_reporting_sfmc.JobAgg` ;;
+
   dimension: email_name {
     type: string
     sql: ${TABLE}.EmailName ;;
@@ -8,22 +9,13 @@ view: job_agg {
     type: number
     sql: ${TABLE}.JobID ;;
   }
-
   dimension_group: sched {
     type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
+    timeframes: [raw, date, week, month, quarter, year]
+    convert_tz: no
     datatype: date
     sql: ${TABLE}.SchedDate ;;
   }
-
   dimension: total_bounce {
     type: number
     sql: ${TABLE}.TotalBounce ;;
