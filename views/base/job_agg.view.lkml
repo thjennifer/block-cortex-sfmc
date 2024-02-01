@@ -1,5 +1,5 @@
 view: job_agg {
-  sql_table_name: `kittycorn-dev-epam.looker_reporting_sfmc.JobAgg` ;;
+  sql_table_name: `@{GCP_PROJECT_ID}.@{REPORTING_DATASET}.JobAgg` ;;
 
   dimension: email_name {
     type: string
