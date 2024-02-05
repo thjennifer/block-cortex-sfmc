@@ -17,20 +17,20 @@ view: +job_agg {
   measure: sum_of_delivered_email {
     type: sum
     value_format_name: "positive_m_or_k"
-    description: "Total emails delivered"
+    description: "Total Emails delivered."
     sql: ${total_delivered} ;;
   }
 
   measure: sum_of_bounced_email {
     type: sum
     value_format_name: "positive_m_or_k"
-    description: "Total count of Emails BOUNCED per job id "
+    description: "Total count of Emails BOUNCED per job id."
     sql: ${total_bounce} ;;
   }
   measure: sum_of_email_click {
     type: sum
     value_format_name: "positive_m_or_k"
-    description: "The total number of emails click as per job id by recipient."
+    description: "The total number of Emails clicks as per job id by recipient."
     sql: ${total_click} ;;
   }
 
@@ -44,7 +44,7 @@ view: +job_agg {
   measure: sum_of_sent_email {
     type: sum
     value_format_name: "positive_m_or_k"
-    description: "Total count of Emails OPEN per job id."
+    description: "Total count of Emails SENT per job id."
     sql: ${total_sent} ;;
   }
 
@@ -65,27 +65,27 @@ view: +job_agg {
   measure: sum_of_unsubscribe {
     type: sum
     value_format_name: "positive_m_or_k"
-    description: "Total emails unsubscribed."
+    description: "Total visitors unsubscribed."
     sql: ${total_unsubscribe} ;;
   }
 
   measure: delivery_rate {
     type: number
-    description: "The percentage of emails delivered within the filtered time period."
+    description: "The percentage of Emails delivered within the filtered time period."
     sql: safe_divide(${sum_of_delivered_email},${sum_of_sent_email}) ;;
     value_format_name:percent_2
   }
 
   measure: ctr {
     type: number
-    description: "The percentage of visitors who clicked a link contained in an email."
+    description: "The percentage of visitors who clicked a link contained in an Email."
     sql: safe_divide(${sum_of_unique_click},${sum_of_delivered_email}) ;;
     value_format_name:percent_2
   }
 
   measure: bounce_rate {
     type: number
-    description: "The percentage of bounce email."
+    description: "The percentage of bounce Emails."
     sql: safe_divide(${sum_of_bounced_email},${sum_of_sent_email}) ;;
     value_format_name: percent_2
   }
@@ -99,7 +99,7 @@ view: +job_agg {
 
   measure: open_rate {
     type: number
-    description: "The percentage of emails opened within the filtered time period."
+    description: "The percentage of Emails opened within the filtered time period."
     sql: safe_divide(${sum_of_unique_open},${sum_of_delivered_email}) ;;
     value_format_name:percent_2
 
