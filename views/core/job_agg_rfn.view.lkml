@@ -72,14 +72,14 @@ view: +job_agg {
   measure: delivery_rate {
     type: number
     description: "The percentage of emails delivered within the filtered time period."
-    sql: safe_divide((${sum_of_sent_email}-${sum_of_bounced_email}),${sum_of_sent_email}) ;;
+    sql: safe_divide(${sum_of_delivered_email},${sum_of_sent_email}) ;;
     value_format_name:percent_2
   }
 
   measure: ctr {
     type: number
     description: "The percentage of visitors who clicked a link contained in an email."
-    sql: safe_divide(${sum_of_unique_click},(${sum_of_sent_email}-${sum_of_bounced_email})) ;;
+    sql: safe_divide(${sum_of_unique_click},${sum_of_delivered_email}) ;;
     value_format_name:percent_2
   }
 
@@ -100,7 +100,7 @@ view: +job_agg {
   measure: open_rate {
     type: number
     description: "The percentage of emails opened within the filtered time period."
-    sql: safe_divide(${sum_of_unique_open},(${sum_of_sent_email}-${sum_of_bounced_email})) ;;
+    sql: safe_divide(${sum_of_unique_open},${sum_of_delivered_email}) ;;
     value_format_name:percent_2
 
   }
