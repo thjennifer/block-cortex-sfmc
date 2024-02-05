@@ -72,35 +72,35 @@ view: +job_agg {
   measure: delivery_rate {
     type: number
     description: "The percentage of Emails delivered within the filtered time period."
-    sql: safe_divide(${sum_of_delivered_email},${sum_of_sent_email}) ;;
+    sql: SAFE_DIVIDE(${sum_of_delivered_email},${sum_of_sent_email}) ;;
     value_format_name:percent_2
   }
 
   measure: ctr {
     type: number
     description: "The percentage of visitors who clicked a link contained in an Email."
-    sql: safe_divide(${sum_of_unique_click},${sum_of_delivered_email}) ;;
+    sql: SAFE_DIVIDE(${sum_of_unique_click},${sum_of_delivered_email}) ;;
     value_format_name:percent_2
   }
 
   measure: bounce_rate {
     type: number
     description: "The percentage of bounce Emails."
-    sql: safe_divide(${sum_of_bounced_email},${sum_of_sent_email}) ;;
+    sql: SAFE_DIVIDE(${sum_of_bounced_email},${sum_of_sent_email}) ;;
     value_format_name: percent_2
   }
 
   measure: unsubscribe_rate {
     type: number
     description: "The percentage of visitors who unsubscribed."
-    sql: safe_divide(${sum_of_unsubscribe},${sum_of_sent_email}) ;;
+    sql: SAFE_DIVIDE(${sum_of_unsubscribe},${sum_of_sent_email}) ;;
     value_format_name:percent_2
   }
 
   measure: open_rate {
     type: number
     description: "The percentage of Emails opened within the filtered time period."
-    sql: safe_divide(${sum_of_unique_open},${sum_of_delivered_email}) ;;
+    sql: SAFE_DIVIDE(${sum_of_unique_open},${sum_of_delivered_email}) ;;
     value_format_name:percent_2
 
   }
