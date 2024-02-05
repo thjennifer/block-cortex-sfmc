@@ -3,7 +3,7 @@ connection: "@{CONNECTION_NAME}"
 # include explores and other objects
 include: "/views/**/*.view.lkml"
 include: "/explores/**/*.explore"
-# include: "/dashboards/*.dashboard.lookml"
+include: "/dashboards/*.dashboard.lookml"
 
 datagroup: sfmc_report_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;

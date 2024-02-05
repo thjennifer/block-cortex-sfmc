@@ -65,7 +65,7 @@ view: +job_agg {
   measure: sum_of_unsubscribe {
     type: sum
     value_format_name: "positive_m_or_k"
-    description: "Total visitors unsubscribed."
+    description: "Total Emails unsubscribed."
     sql: ${total_unsubscribe} ;;
   }
 
