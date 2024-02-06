@@ -102,7 +102,6 @@ view: +job_agg {
     description: "The percentage of Emails opened within the filtered time period."
     sql: SAFE_DIVIDE(${sum_of_unique_open},${sum_of_delivered_email}) ;;
     value_format_name:percent_2
-
   }
 
 }
