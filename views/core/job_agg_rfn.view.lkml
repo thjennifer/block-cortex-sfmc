@@ -1,7 +1,13 @@
-include: "/views/base/job_agg.view"
+#########################################################################################################
+# Purpose: Contains information on account-specific JobIDs as a unique identifier of Email send instances.
+#          Used for Email performance reporting.
+#########################################################################################################
 
+include: "/views/base/job_agg.view"
+# The name of this view in Looker is "Job Agg"
 view: +job_agg {
 
+  ######### PRIMARY KEY #########
   dimension: job_id_pk {
     type: string
     primary_key: yes
@@ -9,11 +15,17 @@ view: +job_agg {
     sql: ${TABLE}.JobID ;;
   }
 
+  # Here's what a typical dimension looks like in LookML.
+  # A dimension is a groupable field that can be used to filter query results.
+  # This dimension will be called "Email Broadcast" in Explore.
   dimension: email_broadcast {
     type: string
     sql: CONCAT(${email_name}, ' ', ${job_id}) ;;
     }
 
+  # A measure is a field that uses a SQL aggregate function.
+  # measures for this dimension, but you can also add measures of many different aggregates.
+  # Click on the type parameter to see all the options in the Quick Help panel on the right.
   measure: sum_of_delivered_email {
     type: sum
     value_format_name: "positive_m_or_k"
