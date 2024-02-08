@@ -1,7 +1,13 @@
-include: "/views/base/job_agg.view"
+#########################################################################################################
+# Purpose: Contains information on account-specific JobIDs as a unique identifier of Email send instances.
+#          Used for Email performance reporting.
+#########################################################################################################
 
+include: "/views/base/job_agg.view"
+# The name of this view in Looker is "Job Agg"
 view: +job_agg {
 
+  ######### PRIMARY KEY #########
   dimension: job_id_pk {
     type: string
     primary_key: yes
@@ -9,11 +15,17 @@ view: +job_agg {
     sql: ${TABLE}.JobID ;;
   }
 
+  # Here's what a typical dimension looks like in LookML.
+  # A dimension is a groupable field that can be used to filter query results.
+  # This dimension will be called "Email Broadcast" in Explore.
   dimension: email_broadcast {
     type: string
     sql: CONCAT(${email_name}, ' ', ${job_id}) ;;
     }
 
+  # A measure is a field that uses a SQL aggregate function.
+  # measures for this dimension, but you can also add measures of many different aggregates.
+  # Click on the type parameter to see all the options in the Quick Help panel on the right.
   measure: sum_of_delivered_email {
     type: sum
     value_format_name: "positive_m_or_k"
@@ -24,41 +36,41 @@ view: +job_agg {
   measure: sum_of_bounced_email {
     type: sum
     value_format_name: "positive_m_or_k"
-    description: "Total count of Emails BOUNCED per job id."
+    description: "Total Emails bounced."
     sql: ${total_bounce} ;;
   }
   measure: sum_of_email_click {
     type: sum
     value_format_name: "positive_m_or_k"
-    description: "The total number of Emails clicks as per job id by recipient."
+    description: "Total Emails clicked."
     sql: ${total_click} ;;
   }
 
   measure: sum_of_open_email {
     type: sum
     value_format_name: "positive_m_or_k"
-    description: "Total count of Emails OPEN per job id."
+    description: "Total Emails opened."
     sql:${total_open} ;;
   }
 
   measure: sum_of_sent_email {
     type: sum
     value_format_name: "positive_m_or_k"
-    description: "Total count of Emails SENT per job id."
+    description: "Total Emails sent."
     sql: ${total_sent} ;;
   }
 
   measure: sum_of_unique_click {
     type: sum
     value_format_name: "positive_m_or_k"
-    description: "Total Unique click as per job id."
+    description: "Total unique Emails clicked."
     sql: ${total_unique_click} ;;
   }
 
   measure: sum_of_unique_open {
     type: sum
     value_format_name: "positive_m_or_k"
-    description: "Total count of unique Emails OPEN per job id."
+    description: "Total unique Emails opened."
     sql: ${total_unique_open} ;;
   }
 
@@ -71,7 +83,7 @@ view: +job_agg {
 
   measure: delivery_rate {
     type: number
-    description: "The percentage of Emails delivered within the filtered time period."
+    description: "The percentage of Emails delivered."
     sql: SAFE_DIVIDE(${sum_of_delivered_email},${sum_of_sent_email}) ;;
     value_format_name:percent_2
   }
@@ -99,10 +111,9 @@ view: +job_agg {
 
   measure: open_rate {
     type: number
-    description: "The percentage of Emails opened within the filtered time period."
+    description: "The percentage of Emails opened."
     sql: SAFE_DIVIDE(${sum_of_unique_open},${sum_of_delivered_email}) ;;
     value_format_name:percent_2
-
   }
 
 }
