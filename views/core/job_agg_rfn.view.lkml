@@ -15,16 +15,13 @@ view: +job_agg {
     sql: ${TABLE}.JobID ;;
   }
 
-  # Here's what a typical dimension looks like in LookML.
-  # A dimension is a groupable field that can be used to filter query results.
-  # This dimension will be called "Email Broadcast" in Explore.
+
+  # This dimension will be called "Email Broadcast" in Explore. Email Broadcast is the concatenation of email and job id.
   dimension: email_broadcast {
     type: string
     sql: CONCAT(${email_name}, ' ', ${job_id}) ;;
     }
 
-  # A measure is a field that uses a SQL aggregate function.
-  # measures for this dimension, but you can also add measures of many different aggregates.
   # Click on the type parameter to see all the options in the Quick Help panel on the right.
   measure: sum_of_delivered_email {
     type: sum

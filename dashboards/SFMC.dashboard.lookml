@@ -5,9 +5,8 @@
   description: ''
   preferred_slug: Hy4hV1CVhFVrD8sBX8q2sy
   elements:
-  - title: SFMC_Report
-    name: SFMC_Report
-    model: cortex-sfmc
+  - title: Sent Emails
+    name: Sent Emails
     explore: job_agg
     type: single_value
     fields: [job_agg.sum_of_sent_email]
@@ -48,9 +47,8 @@
     col: 0
     width: 8
     height: 2
-  - title: New Tile
-    name: New Tile
-    model: cortex-sfmc
+  - title: Open Rate
+    name: Open Rate
     explore: job_agg
     type: single_value
     fields: [job_agg.open_rate]
@@ -97,9 +95,8 @@
     col: 7
     width: 6
     height: 2
-  - title: New Tile
-    name: New Tile (2)
-    model: cortex-sfmc
+  - title: Delivery Rate
+    name: Delivery Rate
     explore: job_agg
     type: single_value
     fields: [job_agg.delivery_rate]
@@ -152,9 +149,8 @@
     col: 16
     width: 8
     height: 2
-  - title: New Tile
-    name: New Tile (3)
-    model: cortex-sfmc
+  - title: Bounces
+    name: Bounces
     explore: job_agg
     type: single_value
     fields: [job_agg.sum_of_bounced_email]
@@ -211,9 +207,8 @@
     col: 8
     width: 8
     height: 2
-  - title: New Tile
-    name: New Tile (4)
-    model: cortex-sfmc
+  - title: Opened Emails
+    name: Opened Emails
     explore: job_agg
     type: single_value
     fields: [job_agg.sum_of_open_email]
@@ -275,9 +270,8 @@
     col: 0
     width: 7
     height: 2
-  - title: New Tile
-    name: New Tile (5)
-    model: cortex-sfmc
+  - title: Clicks
+    name: Clicks
     explore: job_agg
     type: single_value
     fields: [job_agg.sum_of_email_click]
@@ -345,9 +339,8 @@
     col: 13
     width: 6
     height: 2
-  - title: New Tile
-    name: New Tile (6)
-    model: cortex-sfmc
+  - title: CTR
+    name: CTR
     explore: job_agg
     type: single_value
     fields: [job_agg.ctr]
@@ -421,7 +414,6 @@
     height: 2
   - title: Monthly Overview
     name: Monthly Overview
-    model: cortex-sfmc
     explore: job_agg
     type: looker_column
     fields: [job_agg.sum_of_delivered_email, job_agg.sum_of_unique_open, job_agg.sched_month,
@@ -482,611 +474,23 @@
       job_agg.ctr: CTR
     x_axis_datetime_label: "%b %y"
     advanced_vis_config: |-
-      {chart: {
-          animation: false,
-          backgroundColor: 'rgba(0, 0, 0, 0)',
-          inverted: false,
-          orderStacks: 'none',
-          spacingRight: 12,
-          spacingTop: 10,
-          style: {
-            fontFamily: 'inherit',
-            fontSize: '12px',
-          },
-          type: 'column',
-          events: {},
-          zoomType: 'xy',
-          panning: {
-            enabled: true,
-          },
-          panKey: 'shift',
-          resetZoomButton: {
-            theme: {
-              fill: '#FFF',
-              stroke: '#c1c6cc',
-              r: 3,
-              style: {
-                color: '#1A73E8',
-              },
-              states: {
-                hover: {
-                  stroke: '#939ba5',
-                  fill: '#FFF',
-                },
-              },
-            },
-          },
-        },
-        credits: {
-          enabled: false,
-        },
-        defs: {
-          percentOfPreviousRightArrow: {
-            id: 'percent-of-previous-right-arrow',
-            tagName: 'marker',
-            children: [
-              {
-                tagName: 'path',
-                d: 'M0,3.5L0 10.5 12 10.5 12 13 16 7 12 1 12 3.5z',
-              },
-            ],
-            markerWidth: 16,
-            markerHeight: 13,
-            refX: 9,
-            refY: 7,
-          },
-        },
-        legend: {
-          align: 'center',
-          enabled: true,
-          itemStyle: {
-            color: 'var(--vis-color-text4)',
-            fontWeight: 'normal',
-          },
-          itemHoverStyle: {
-            color: 'var(--vis-color-text5)',
-          },
-          layout: 'horizontal',
-          navigation: {
-            activeColor: '#666666',
-          },
-          reversed: false,
-          verticalAlign: 'bottom',
-          useHTML: true,
-        },
-        plotOptions: {
-          series: {
-            animation: false,
-            cursor: 'pointer',
-            connectNulls: true,
-            turboThreshold: 5000,
-          },
-        },
-        responsive: {
-          rules: [
-            {
-              condition: {},
-              chartOptions: {
-                series: [
-                  {
-                    type: 'column',
-                    id: 'job_agg.sum_of_delivered_email',
-                    dataLabels: {
-                      enabled: false,
-                    },
-                  },
-                  {
-                    type: 'column',
-                    id: 'job_agg.sum_of_unique_open',
-                    dataLabels: {
-                      enabled: false,
-                    },
-                  },
-                  {
-                    type: 'line',
-                    id: 'job_agg.open_rate',
-                    dataLabels: {
-                      enabled: false,
-                    },
-                  },
-                ],
-                xAxis: {
-                  title: {
-                    style: {
-                      textOverflow: 'ellipsis',
-                      width: '100%',
-                    },
-                  },
-                },
-                yAxis: [
-                  {
-                    stackLabels: {
-                      enabled: false,
-                    },
-                    title: {
-                      style: {
-                        textOverflow: 'ellipsis',
-                        width: '100%',
-                      },
-                    },
-                  },
-                  {
-                    stackLabels: {
-                      enabled: false,
-                    },
-                    title: {
-                      style: {
-                        textOverflow: 'ellipsis',
-                        width: '100%',
-                      },
-                    },
-                  },
-                ],
-              },
-            },
-            {
-              condition: {},
-              chartOptions: {
-                series: [
-                  {
-                    type: 'column',
-                    id: 'job_agg.sum_of_delivered_email',
-                    dataLabels: {
-                      enabled: false,
-                    },
-                  },
-                  {
-                    type: 'column',
-                    id: 'job_agg.sum_of_unique_open',
-                    dataLabels: {
-                      enabled: false,
-                    },
-                  },
-                  {
-                    type: 'line',
-                    id: 'job_agg.open_rate',
-                    dataLabels: {
-                      enabled: false,
-                    },
-                  },
-                ],
-                title: {},
-                xAxis: {
-                  title: {
-                    style: {
-                      textOverflow: 'ellipsis',
-                      width: '100%',
-                    },
-                  },
-                  labels: {
-                    enabled: false,
-                  },
-                  gridLineWidth: 0,
-                },
-                yAxis: [
-                  {
-                    title: {
-                      style: {
-                        textOverflow: 'ellipsis',
-                        width: '100%',
-                      },
-                    },
-                    stackLabels: {
-                      enabled: false,
-                    },
-                  },
-                  {
-                    title: {
-                      style: {
-                        textOverflow: 'ellipsis',
-                        width: '100%',
-                      },
-                    },
-                    stackLabels: {
-                      enabled: false,
-                    },
-                  },
-                ],
-              },
-            },
-            {
-              condition: {},
-              chartOptions: {
-                series: [
-                  {
-                    type: 'column',
-                    id: 'job_agg.sum_of_delivered_email',
-                    dataLabels: {
-                      enabled: false,
-                    },
-                  },
-                  {
-                    type: 'column',
-                    id: 'job_agg.sum_of_unique_open',
-                    dataLabels: {
-                      enabled: false,
-                    },
-                  },
-                  {
-                    type: 'line',
-                    id: 'job_agg.open_rate',
-                    dataLabels: {
-                      enabled: false,
-                    },
-                  },
-                ],
-                title: {},
-                xAxis: {
-                  title: {},
-                  labels: {
-                    enabled: false,
-                  },
-                  gridLineWidth: 0,
-                },
-                yAxis: [
-                  {
-                    title: {},
-                    labels: {
-                      enabled: false,
-                    },
-                    gridLineWidth: 0,
-                    stackLabels: {
-                      enabled: false,
-                    },
-                  },
-                  {
-                    title: {},
-                    labels: {
-                      enabled: false,
-                    },
-                    gridLineWidth: 0,
-                    stackLabels: {
-                      enabled: false,
-                    },
-                  },
-                ],
-              },
-            },
-            {
-              condition: {},
-              chartOptions: {
-                legend: {
-                  enabled: false,
-                },
-              },
-            },
-          ],
-        },
-        series: [
-          {
-            color: '#c0edc1',
-            data: [],
+      {
+        chart: {},
+        series: [{
             dataLabels: {
               enabled: false,
-              style: {
-                fontSize: '12px',
-                fontWeight: 'bold',
-                textOutline: 'none',
-              },
             },
             events: {},
             id: 'job_agg.sum_of_delivered_email',
-            index: 0,
-            legendIndex: 0,
-            name: 'Delivered',
-            series: {
-              data: [],
-              xAxisType: 'datetime',
-              yCategories: [],
-              result: {},
-              config: {},
-              type: 'column',
-              id: 'job_agg.sum_of_delivered_email',
-              field: {},
-              index: 0,
-              stacking: 'normal',
-              isSilhouetted: false,
-              legendIndex: 0,
-              numberOfSeries: 3,
-              numberOfFields: 3,
-            },
-            stacking: 'normal',
-            states: {
-              inactive: {
-                opacity: 1,
-              },
-            },
-            tooltip: {
-              followPointer: true,
-            },
-            type: 'column',
-            visible: true,
-            yAxis: 0,
-            zIndex: 2,
-            zoneAxis: 'y',
-            zones: [],
-            stickyTracking: true,
-            borderWidth: 0,
-            groupPadding: 0.05,
-            pointPadding: 0,
-            hideStackedChartValueLabels: true,
+
           },
           {
-            color: '#aadde8',
-            data: [],
             dataLabels: {
               enabled: false,
-              style: {
-                fontSize: '12px',
-                fontWeight: 'bold',
-                textOutline: 'none',
-              },
             },
             events: {},
             id: 'job_agg.sum_of_unique_open',
-            index: 1,
-            legendIndex: 1,
-            name: 'Unique Opened Emails',
-            series: {
-              data: [],
-              xAxisType: 'datetime',
-              yCategories: [],
-              result: {},
-              config: {},
-              type: 'column',
-              id: 'job_agg.sum_of_unique_open',
-              field: {},
-              index: 1,
-              stacking: 'normal',
-              isSilhouetted: false,
-              legendIndex: 1,
-              numberOfSeries: 3,
-              numberOfFields: 3,
-            },
-            stacking: 'normal',
-            states: {
-              inactive: {
-                opacity: 1,
-              },
-            },
-            tooltip: {
-              followPointer: true,
-            },
-            type: 'column',
-            visible: true,
-            yAxis: 0,
-            zIndex: 1,
-            zoneAxis: 'y',
-            zones: [],
-            stickyTracking: true,
-            borderWidth: 0,
-            groupPadding: 0.05,
-            pointPadding: 0,
-            hideStackedChartValueLabels: true,
-          },
-          {
-            color: '#a918b4',
-            data: [],
-            dataLabels: {
-              enabled: true,
-              style: {
-                fontSize: '12px',
-                fontWeight: 'bold',
-                textOutline: 'none',
-              },
-            },
-            events: {},
-            id: 'job_agg.open_rate',
-            index: 2,
-            legendIndex: 2,
-            name: 'Open Rate',
-            series: {
-              data: [],
-              xAxisType: 'datetime',
-              yCategories: [],
-              result: {},
-              config: {},
-              type: 'line',
-              id: 'job_agg.open_rate',
-              field: {},
-              index: 2,
-              isSilhouetted: false,
-              legendIndex: 2,
-              numberOfSeries: 3,
-              numberOfFields: 3,
-            },
-            states: {
-              inactive: {
-                opacity: 1,
-              },
-            },
-            tooltip: {
-              followPointer: false,
-            },
-            type: 'line',
-            visible: true,
-            yAxis: 1,
-            zIndex: 3,
-            zoneAxis: 'y',
-            zones: [],
-            stickyTracking: true,
-            marker: {
-              symbol: 'circle',
-              enabled: true,
-            },
-            step: false,
-          },
-        ],
-        title: {
-          text: null,
-        },
-        tooltip: {
-          animation: false,
-          backgroundColor: 'var(--vis-color-tooltip-background)',
-          borderWidth: 0,
-          borderRadius: 4,
-          hideDelay: 0,
-          outside: true,
-          padding: 8,
-          shadow: false,
-          shape: 'square',
-          style: {
-            color: 'var(--vis-color-tooltip-text)',
-            fontWeight: '400px',
-            fontFamily: 'inherit',
-          },
-          useHTML: true,
-        },
-        xAxis: {
-          allowDecimals: false,
-          dateTimeLabelFormats: {
-            millisecond: '%H:%M:%S.%L',
-            second: '%H:%M:%S',
-            minute: '%H:%M',
-            hour: '%H:%M',
-            day: '%b %e',
-            week: '%b %e',
-            month: '%B',
-            year: '%Y',
-          },
-          gridLineColor: '#e6e6e6',
-          gridLineWidth: 0,
-          keepOrder: true,
-          labels: {
-            enabled: true,
-            data: [],
-            events: {},
-            format: '{value:%b %y}',
-            autoRotationLimit: 150,
-            style: {
-              cursor: 'default',
-              fontSize: '12px',
-              color: 'inherit',
-              textOverflow: 'ellipsis',
-            },
-            useHTML: true,
-          },
-          maxPadding: 0.01,
-          minPadding: 0.01,
-          reversed: false,
-          startOfWeek: 1,
-          tickLength: 0,
-          title: {
-            style: {
-              color: 'inherit',
-            },
-            text: 'Month',
-            useHTML: true,
-          },
-          type: 'datetime',
-          uniqueNames: false,
-        },
-        yAxis: [
-          {
-            allowDecimals: false,
-            dateTimeLabelFormats: {
-              millisecond: '%H:%M:%S.%L',
-              second: '%H:%M:%S',
-              minute: '%H:%M',
-              hour: '%H:%M',
-              day: '%b %e',
-              week: '%b %e',
-              month: '%B',
-              year: '%Y',
-            },
-            endOnTick: false,
-            gridLineWidth: 1,
-            labels: {
-              enabled: true,
-              events: {},
-              style: {
-                color: 'inherit',
-                fontSize: '12px',
-              },
-              useHTML: true,
-            },
-            maxPadding: 0.01,
-            opposite: false,
-            plotBands: [],
-            plotLines: [],
-            reversed: false,
-            reversedStacks: false,
-            softMax: 0,
-            softMin: 0,
-            stackLabels: {
-              allowOverlap: false,
-              enabled: false,
-              style: {
-                color: '#808080',
-                fontSize: '12px',
-                fontWeight: 'bold',
-                textOutline: 'none',
-              },
-            },
-            startOnTick: false,
-            tickPixelInterval: 60,
-            title: {
-              style: {
-                color: 'inherit',
-              },
-              text: null,
-              useHTML: true,
-            },
-            type: 'linear',
-            visible: true,
-          },
-          {
-            allowDecimals: true,
-            dateTimeLabelFormats: {
-              millisecond: '%H:%M:%S.%L',
-              second: '%H:%M:%S',
-              minute: '%H:%M',
-              hour: '%H:%M',
-              day: '%b %e',
-              week: '%b %e',
-              month: '%B',
-              year: '%Y',
-            },
-            endOnTick: false,
-            gridLineWidth: 0,
-            labels: {
-              enabled: true,
-              events: {},
-              style: {
-                color: 'inherit',
-                fontSize: '12px',
-              },
-              useHTML: true,
-            },
-            maxPadding: 0.01,
-            opposite: true,
-            plotBands: [],
-            plotLines: [],
-            reversed: false,
-            reversedStacks: false,
-            softMax: 0,
-            softMin: 0,
-            stackLabels: {
-              allowOverlap: false,
-              enabled: false,
-              style: {
-                color: '#808080',
-                fontSize: '12px',
-                fontWeight: 'bold',
-                textOutline: 'none',
-              },
-            },
-            startOnTick: false,
-            tickPixelInterval: 60,
-            title: {
-              style: {
-                color: '#a918b4',
-              },
-              text: 'Open Rate',
-              useHTML: true,
-            },
-            type: 'linear',
-            visible: true,
+
           },
         ],
       }
@@ -1149,7 +553,6 @@
     height: 8
   - title: Email Broadcast Opened Vs Clicked
     name: Email Broadcast Opened Vs Clicked
-    model: cortex-sfmc
     explore: job_agg
     type: looker_bar
     fields: [job_agg.sum_of_unique_open, job_agg.sum_of_email_click, job_agg.email_broadcast]
@@ -1261,7 +664,6 @@
     height: 9
   - title: Open Rate Vs Click Through Rate
     name: Open Rate Vs Click Through Rate
-    model: cortex-sfmc
     explore: job_agg
     type: looker_column
     fields: [job_agg.ctr, job_agg.sched_week, job_agg.open_rate]
@@ -1374,7 +776,6 @@
     height: 8
   - title: Bounce Rate
     name: Bounce Rate
-    model: cortex-sfmc
     explore: job_agg
     type: looker_bar
     fields: [job_agg.bounce_rate, job_agg.email_broadcast]
@@ -1485,7 +886,6 @@
     height: 9
   - title: Unsubscribe Rate
     name: Unsubscribe Rate
-    model: cortex-sfmc
     explore: job_agg
     type: looker_column
     fields: [job_agg.unsubscribe_rate, job_agg.sched_month]
@@ -1629,7 +1029,6 @@
     height: 2
   - title: Email Broadcast Performance Overview
     name: Email Broadcast Performance Overview
-    model: cortex-sfmc
     explore: job_agg
     type: looker_column
     fields: [job_agg.sum_of_delivered_email, job_agg.sum_of_unique_open, job_agg.ctr,
@@ -1760,7 +1159,6 @@
     height: 9
   - title: Email Broadcast Performance Details
     name: Email Broadcast Performance Details
-    model: cortex-sfmc
     explore: job_agg
     type: looker_grid
     fields: [job_agg.sum_of_sent_email, job_agg.sum_of_delivered_email, job_agg.sum_of_unique_open,
@@ -1983,7 +1381,6 @@
     ui_config:
       type: tag_list
       display: popover
-    model: cortex-sfmc
     explore: job_agg
     listens_to_filters: []
     field: job_agg.email_broadcast
