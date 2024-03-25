@@ -5,8 +5,9 @@
   description: ''
   preferred_slug: Hy4hV1CVhFVrD8sBX8q2sy
   elements:
-  - title: Sent Emails
-    name: Sent Emails
+  - title: SFMC_Report
+    name: SFMC_Report
+    model: cortex-sfmc
     explore: job_agg
     type: single_value
     fields: [job_agg.sum_of_sent_email]
@@ -658,7 +659,7 @@
     listen:
       Email Broadcast: job_agg.email_broadcast
       Broadcast Date: job_agg.sched_date
-    row: 23
+    row: 25
     col: 0
     width: 24
     height: 9
@@ -770,7 +771,7 @@
     listen:
       Email Broadcast: job_agg.email_broadcast
       Broadcast Date: job_agg.sched_date
-    row: 32
+    row: 34
     col: 0
     width: 24
     height: 8
@@ -880,7 +881,7 @@
     listen:
       Email Broadcast: job_agg.email_broadcast
       Broadcast Date: job_agg.sched_date
-    row: 40
+    row: 44
     col: 0
     width: 13
     height: 9
@@ -992,7 +993,7 @@
     listen:
       Email Broadcast: job_agg.email_broadcast
       Broadcast Date: job_agg.sched_date
-    row: 40
+    row: 44
     col: 13
     width: 11
     height: 9
@@ -1005,16 +1006,16 @@
     body_text: ''
     row: 0
     col: 0
-    width: 9
+    width: 7
     height: 2
   - name: "<h2><strong> Performance Summary"
     type: text
     title_text: "<h2><strong> Performance Summary"
-    subtitle_text: ''
+    subtitle_text: What was the high level performance of my email broadcasts?
     body_text: ''
     row: 0
-    col: 9
-    width: 7
+    col: 7
+    width: 11
     height: 2
   - name: <p style="color:grey;">-------------------------------------------------------------------------------------------------------------</p>
       </body> (2)
@@ -1024,8 +1025,8 @@
     subtitle_text: ''
     body_text: ''
     row: 0
-    col: 16
-    width: 8
+    col: 18
+    width: 6
     height: 2
   - title: Email Broadcast Performance Overview
     name: Email Broadcast Performance Overview
@@ -1153,7 +1154,7 @@
     listen:
       Email Broadcast: job_agg.email_broadcast
       Broadcast Date: job_agg.sched_date
-    row: 14
+    row: 16
     col: 0
     width: 24
     height: 9
@@ -1367,10 +1368,76 @@
     listen:
       Email Broadcast: job_agg.email_broadcast
       Broadcast Date: job_agg.sched_date
-    row: 49
+    row: 53
     col: 0
     width: 24
     height: 9
+  - name: "<h3><strong>What was the relationship between opened email rate and click\
+      \ through rate?"
+    type: text
+    title_text: "<h3><strong>What was the relationship between opened email rate and\
+      \ click through rate?"
+    subtitle_text: ''
+    body_text: ''
+    row: 14
+    col: 5
+    width: 14
+    height: 2
+  - name: <p style="color:grey;">-------------------------------------------------------------------------------------------------------------</p>
+      </body> (3)
+    type: text
+    title_text: <p style="color:grey;">-------------------------------------------------------------------------------------------------------------</p>
+      </body>
+    subtitle_text: ''
+    body_text: ''
+    row: 14
+    col: 0
+    width: 5
+    height: 2
+  - name: <p style="color:grey;">-------------------------------------------------------------------------------------------------------------</p>
+      </body> (4)
+    type: text
+    title_text: <p style="color:grey;">-------------------------------------------------------------------------------------------------------------</p>
+      </body>
+    subtitle_text: ''
+    body_text: ''
+    row: 42
+    col: 0
+    width: 5
+    height: 2
+  - name: "<h3><strong>What was the bounce and unsubscribe rate by campaign and by\
+      \ month?"
+    type: text
+    title_text: "<h3><strong>What was the bounce and unsubscribe rate by campaign\
+      \ and by month?"
+    subtitle_text: ''
+    body_text: ''
+    row: 42
+    col: 5
+    width: 14
+    height: 2
+  - name: <p style="color:grey;">-------------------------------------------------------------------------------------------------------------</p>
+      </body> (5)
+    type: text
+    title_text: <p style="color:grey;">-------------------------------------------------------------------------------------------------------------</p>
+      </body>
+    subtitle_text: ''
+    body_text: ''
+    row: 14
+    col: 19
+    width: 5
+    height: 2
+  - name: <p style="color:grey;">-------------------------------------------------------------------------------------------------------------</p>
+      </body> (6)
+    type: text
+    title_text: <p style="color:grey;">-------------------------------------------------------------------------------------------------------------</p>
+      </body>
+    subtitle_text: ''
+    body_text: ''
+    row: 42
+    col: 19
+    width: 5
+    height: 2
   filters:
   - name: Email Broadcast
     title: Email Broadcast
