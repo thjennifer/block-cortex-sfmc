@@ -7,7 +7,6 @@
   elements:
   - title: SFMC_Report
     name: SFMC_Report
-    model: cortex-sfmc
     explore: job_agg
     type: single_value
     fields: [job_agg.sum_of_sent_email]
