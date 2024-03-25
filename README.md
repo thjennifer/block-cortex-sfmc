@@ -14,8 +14,8 @@ You can also extend to insights beyond Marketing with other datasets in Google C
 
 
 
-<h3> What insights are possible? </h3>
-<h4><span style="color:#2d7eea">Following insights are provided out-of-the-box:</span></h4>
+<h3><span style="color:#2d7eea"> What insights are possible? </span></h3>
+<h4>Following insights are provided out-of-the-box:</h4>
 
 - **Monthly Overview**
    Understand the monthly performance of email broadcasts by analyzing the delivered versus uniquely opened emails together with corresponding open rate.
@@ -39,11 +39,11 @@ You can also extend to insights beyond Marketing with other datasets in Google C
     Review performance metrics across all email broadcasts in a single visualization.
 
 
-<h2>Required Data</h2>
+<h2><span style="color:#2d7eea">Required Data</span></h2>
 
 Get the required BigQuery datasets for this block by following the installation instructions for [Google Cloud Cortex Framework](https://github.com/GoogleCloudPlatform/cortex-data-foundation).
 
-<h2>Installation Instructions</h2>
+<h2><span style="color:#2d7eea">Installation Instructions</span></h2>
 
 Manually install this LookML Model following one of the options below.
 
@@ -63,12 +63,11 @@ With the Looker project based on your forked repository, you can customize the L
 
 
 <h2><span style="color:#2d7eea">Required Customizations</span></h2>
-Constant Values
-           ❕ Required Constant Values are configured during the Installation process.
 
+Required Constant Values are configured during the Installation process.
 
 - **Connection**: In the manifest.lkml file, update the value of the CONNECTION_NAME constant.
-- **Google Project ID**: The Google Cloud project where the Meta reporting dataset resides in BigQuery (i.e. Google Cloud  project id). [Identifying Project ID](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects).
+- **Google Project ID**: The Google Cloud project where the SFMC reporting dataset resides in BigQuery (i.e. Google Cloud  project id). [Identifying Project ID](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects).
 - **Reporting Dataset**:  The deployed Cortex Data Foundation dataset where the SFMC reporting views reside within the Google Cloud BigQuery project. (Depending on the deployment settings for the [Google Cloud Cortex Data Foundation](https://github.com/GoogleCloudPlatform/cortex-data-foundation) (see section Required Data), this dataset name would typically be of the pattern ending with  _REPORTING).
 - **(Optional)**  Unhide additional dimensions and measure: Most dimensions and measures have been hidden to simplify reporting and data understanding. However should you find anything valuable missing, simply update the hidden parameters to No in the relevant views.
 
