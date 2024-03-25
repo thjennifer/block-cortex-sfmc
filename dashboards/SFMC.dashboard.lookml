@@ -1030,6 +1030,7 @@
     height: 2
   - title: Email Broadcast Performance Overview
     name: Email Broadcast Performance Overview
+    model: cortex-sfmc
     explore: job_agg
     type: looker_column
     fields: [job_agg.sum_of_delivered_email, job_agg.sum_of_unique_open, job_agg.ctr,
@@ -1454,12 +1455,12 @@
   - name: Broadcast Date
     title: Broadcast Date
     type: field_filter
-    default_value: 2023/01/01 to 2023/12/13
+    default_value: ''
     allow_multiple_values: true
     required: false
     ui_config:
-      type: day_range_picker
-      display: inline
+      type: advanced
+      display: popover
       options: []
     model: cortex-sfmc
     explore: job_agg
