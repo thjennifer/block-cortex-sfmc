@@ -1,4 +1,4 @@
-<h1><span style="color:#2d7eea">Google Cloud Cortex Framework for Salesforce Marketing Cloud </span></h1>
+<h1><span style="color:#2d7eea">Google Cloud Cortex Framework for Salesforce Marketing Cloud (SFMC) </span></h1>
 
 
 <h2><span style="color:#2d7eea">What does this Looker Block do for me?</span></h2>
