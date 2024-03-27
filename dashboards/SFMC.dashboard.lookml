@@ -1029,7 +1029,6 @@
     height: 2
   - title: Email Broadcast Performance Overview
     name: Email Broadcast Performance Overview
-    model: cortex-sfmc
     explore: job_agg
     type: looker_column
     fields: [job_agg.sum_of_delivered_email, job_agg.sum_of_unique_open, job_agg.ctr,
@@ -1461,7 +1460,6 @@
       type: advanced
       display: popover
       options: []
-    model: cortex-sfmc
     explore: job_agg
     listens_to_filters: []
     field: job_agg.sched_date
