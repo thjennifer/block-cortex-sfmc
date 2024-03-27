@@ -68,7 +68,7 @@ Required Constant Values are configured during the Installation process.
 
 - **Connection**: In the manifest.lkml file, update the value of the CONNECTION_NAME constant.
 - **Google Project ID**: The Google Cloud project where the SFMC reporting dataset resides in BigQuery (i.e. Google Cloud  project id). [Identifying Project ID](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects).
-- **Reporting Dataset**:  The deployed Cortex Data Foundation dataset where the SFMC reporting views reside within the Google Cloud BigQuery project. (Depending on the deployment settings for the [Google Cloud Cortex Data Foundation](https://github.com/GoogleCloudPlatform/cortex-data-foundation) (see section Required Data), this dataset name would typically be of the pattern ending with  _REPORTING).
+- **Reporting Dataset**:  The deployed Cortex Data Foundation dataset where the SFMC reporting views reside within the Google Cloud BigQuery project. Depending on the deployment settings for the [Google Cloud Cortex Data Foundation](https://github.com/GoogleCloudPlatform/cortex-data-foundation) (see section Required Data), this dataset name would typically be of the pattern ending with  _REPORTING.
 - **(Optional)**  Unhide additional dimensions and measure: Most dimensions and measures have been hidden to simplify reporting and data understanding. However should you find anything valuable missing, simply update the hidden parameters to No in the relevant views.
 
 
