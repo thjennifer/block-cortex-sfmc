@@ -1,5 +1,3 @@
-# Please change the connection values before deploying to production
-
 constant: CONNECTION_NAME {
   value: "connection"
   export: override_required

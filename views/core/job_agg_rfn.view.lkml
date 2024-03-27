@@ -22,8 +22,7 @@ view: +job_agg {
     sql: CONCAT(${email_name}, ' ', ${job_id}) ;;
     }
 
-  # Click on the type parameter to see all the options in the Quick Help panel on the right.
-  measure: sum_of_delivered_email {
+ measure: sum_of_delivered_email {
     type: sum
     value_format_name: "positive_m_or_k"
     description: "Total Emails delivered."
@@ -36,6 +35,7 @@ view: +job_agg {
     description: "Total Emails bounced."
     sql: ${total_bounce} ;;
   }
+
   measure: sum_of_email_click {
     type: sum
     value_format_name: "positive_m_or_k"
